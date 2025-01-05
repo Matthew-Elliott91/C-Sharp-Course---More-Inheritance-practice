@@ -7,7 +7,12 @@
            // Employee joe = new Employee("Joe", 25, 1234, "Sales Rep");
             // joe.DisplayPersonInfo();
             Manager carl = new Manager("Carl", 35, 5678, "Sales Manager", 10);
+            carl.BecomeOlder(5);
             carl.DisplayManagerInfo();
+
+          
+            
+           
         }
 
         public class Person
@@ -28,7 +33,18 @@
                 Console.WriteLine($"Person information: Name: {Name}, Age: {Age}");
             }
 
+            /// <summary>
+            /// This method will increase the age of the person by the number of years passed as a parameter
+            /// </summary>
+            /// <param name="years"> The parameter that indicates the amount of years the object should age</param>
+            /// <returns> Returns the new age after becoming older</returns>
+            public int BecomeOlder(int years)
+            {
+                Age += years;
+                return Age;
             }
+
+        }
         public class Employee : Person
         {
             public int EmployeeID { get; private set; }
